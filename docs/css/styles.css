@@ -1,79 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
+
 :root {
-  --dark: #000;
-  --course: #F4E408;
-  --light: #fff;
+  --main-bg-color: red;
+  --second-bg-color: #000;
+  --third-bg-color: #fff;
 }
-body {
-  background-color: var(--dark);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-  color: var(--light);
-  font-family: monospace;
-  font-size: 1.5em;
-  line-height: 1.5;
-  margin: 0;
+
+main img {
+  width: 15%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
-main {
-  max-width: 800px;
-  margin: 10vh auto;
+
+main .black {
+  right: 0;
+  left: unset;
 }
-header {
-  background: var(--course);
-  color: var(--dark);
-  height: 30vh;
+
+.animation {
+  top: 20px;
+  position: relative;
+  width: 80%;
+  margin: auto;
+  height: 450px;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  background-color: var(--main-bg-color);
+  transition: 300ms;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
 }
+
+.animation:hover~.smoke {
+  opacity: 1;
+}
+
+.smoke {
+  position: fixed;
+  left: -47px;
+  bottom: 100px;
+  opacity: 0;
+  width: 28%;
+}
+
+.smoke2 {
+  right: -44px;
+  left: unset;
+}
+
+.animation:hover {
+  background-color: transparent;
+}
+
+.arrow3,
+.arrow {
+  height: 13em;
+  width: 13em;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background: #000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: 500ms;
+}
+
+.arrow4,
+.arrow2 {
+  height: 13em;
+  width: 13em;
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background: #000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: 500ms;
+}
+
+.arrow3,
+.arrow4 {
+  background-color: var(--main-bg-color);
+}
+
+.eye {
+  z-index: 1;
+  Background-color: #000;
+  transition: 2s;
+  width: 13em;
+  height: 13em;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.eye-layer {
+  transition: 500ms;
+  background-color: var(--main-bg-color);
+  width: 6em;
+  height: 6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.animation:hover .eye-layer {
+  transform: rotate(200deg);
+  background-color: var(--main-bg-color);
+}
+
+.animation:hover .eye {
+  transform: scale(1.5);
+}
+
+.animation:hover .eye-inner-layer {
+  width: 2em;
+  height: 3em;
+}
+
+.animation:hover {
+  filter: unset;
+}
+
+input:checked~.eye-inner-layer {
+  background-color: blue;
+}
+
+.animation:hover>.arrow {
+  left: 70%;
+}
+
+.animation:hover>.arrow2 {
+  right: 70%;
+}
+
+.animation:hover>.arrow3 {
+  left: 40%;
+}
+
+.animation:hover>.arrow4 {
+  right: 40%;
+}
+
+.animation:hover>.menu {
+  top: 300px;
+  opacity: 1;
+}
+
+.eye:hover>h1 {
+  opacity: 1;
+}
+
 h1 {
-  font-size: 5em;
-}
-h2 {
-  font-size: 2em;
-  margin-top: 1.5em;
-}
-ul {
-  display: flex;
-  /flex-wrap: wrap;
-  justify-content: space-between;
-  list-style-type: none;
-  padding: 0;
-  margin: 0 -1rem;
-}
-ul li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-}
-ul img {
-  border: 2px solid var(--light);
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-img {
-  max-width: 100%;
+  opacity: 0;
+  color: #fff;
+  font-size: 3em;
 }
 
-section#lecturers img {
+.eye-inner-layer {
+  background-color: var(--second-bg-color);
+  width: 1em;
+  height: 1em;
   border-radius: 100%;
-  margin-right: 1em;
+  transition: 300ms;
 }
 
-.button {
-  background: var(--light);
-  color: var(--dark);
-  padding: 1em;
+.menu {
+  width: 20%;
+  text-align: center;
+  margin: auto;
+  opacity: 0;
+  transition: 300ms;
+  position: relative;
+  top: 0px;
+  background: var(--second-bg-color);
+  padding: .5em 2em;
+  font-family: 'Zhi Mang Xing', cursive;
+  color: var(--third-bg-color);
 }
 
-.examples img {
-  max-width: 25vh;
+.menu h2 {
+  font-size: 2em;
+  font-size: 2em;
+  border-bottom: 2px solid var(--third-bg-color);
 }
 
-a,
-a:visited {
-  color: var(--course);
+.menu ul {
+  font-size: 1.5em;
+  padding: 0;
+  list-style: none;
 }
 
-footer {
-  font-style: italic;
+body {
+  background:
+    linear-gradient(135deg, var(--second-bg-color) 15%, transparent 25%) -50px 0,
+    linear-gradient(225deg, var(--second-bg-color) 15%, transparent 25%) -50px 0,
+    linear-gradient(315deg, var(--second-bg-color) 15%, transparent 25%),
+    linear-gradient(45deg, var(--second-bg-color) 15%, transparent 25%);
+
+  background-size: 100px 100px;
+  background-color: var(--main-bg-color);
+
 }
+
+/* code vanaf: https://www.w3schools.com/howto/howto_css_shake_image.asp */
+.animation:hover body {
+  background-color: #000;
+}
+
+.animation:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+.animation:hover ~ .laser-beam { 
+  opacity: 1;
+  width: 700px;
+}
+
+
+.laser-beam {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 0, 0, 0,6);
+  box-shadow: 0px 0px 15px 0px #000;
+  opacity: 0;
+  z-index: 50;
+  position: absolute;
+  bottom: 170px;
+  left: 139px;
+  transition: 300ms;
+  border-radius: 20%;
+}
+
