@@ -190,13 +190,13 @@ h1 {
   background: var(--second-bg-color);
   padding: .5em 2em;
   font-family: 'Zhi Mang Xing', cursive;
-  color: var(--third-bg-color);
+  color: var(--main-bg-color);
 }
 
 .menu h2 {
   font-size: 2em;
   font-size: 2em;
-  border-bottom: 2px solid var(--third-bg-color);
+  border-bottom: 2px solid var(--main-bg-color);
 }
 
 .menu ul {
@@ -214,23 +214,18 @@ body {
 
   background-size: 100px 100px;
   background-color: var(--main-bg-color);
-
 }
 
-/* code vanaf: https://www.w3schools.com/howto/howto_css_shake_image.asp */
-.animation:hover body {
-  background-color: #000;
-}
-
+/* shake code vanaf: https://www.w3schools.com/howto/howto_css_shake_image.asp */
 .animation:hover {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
+
 .animation:hover ~ .laser-beam { 
   opacity: 1;
   width: 700px;
 }
-
 
 .laser-beam {
   width: 10px;
@@ -246,3 +241,11 @@ body {
   border-radius: 20%;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animation {
+    animation: unset;
+  }
+  .animation:hover {
+    animation: unset;
+  }
+}
