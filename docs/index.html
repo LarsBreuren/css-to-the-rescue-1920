@@ -19,7 +19,14 @@
     <div class="animation">
       <div class="eye">
         <div class="eye-layer">
-          <!-- <input type="checkbox"> -->
+          <div class="buttons">
+            <label class="checkboxLabel">
+              <input class="eye-checkbox" type="checkbox" id="eye" checked name="bigflames" value="bigflames">
+              <div class="png">
+              </div>
+          
+           </label>
+          </div>
           <div class="eye-inner-layer">
 
           </div>
@@ -33,15 +40,28 @@
       </div>
       <div class="arrow4">
       </div>
-      <div class="menu">
-        <h2> Drinken </h2>
-        <ul>
-          <li>Bier - 3</li>
-          <li>Water - 2</li>
-          <li>Steak & Cheese - 6,50</li>
-        </ul>
-      </div>
+     
     </div>
+
+    <div class="menu" id="menu">
+      <article>
+      <h2> Drinken </h2>
+      <ul>
+        <li>Bier - 3</li>
+        <li>Water - 2</li>
+        <li>Cola - 3</li>
+      </ul>
+    </article>
+    <article>
+      <h2> Eten </h2>
+      <ul>
+        <li>Tosti - 3</li>
+        <li>Broodje gezond - 2</li>
+        <li>Steak & Cheese - 6,50</li>
+      </ul>
+    </article>
+    </div>
+
     <div class="laser-beam"></div>
     <div class="smoke">
       <div class="fire">
@@ -97,6 +117,7 @@
         <div class="particle"></div>
       </div>
     </div>
+    <div class="laser-beam2"></div>
     <div class="smoke smoke2">
       <div class="fire">
         <div class="particle"></div>
@@ -150,16 +171,20 @@
         <div class="particle"></div>
         <div class="particle"></div>
       </div>
+
+ 
+  
     </div>
 
-    <img src="img/dragon.png">
+    <img src="img/dragon.png" class="red">
 
     <img class="black" src="img/dragonblack.png">
 
 
+
   </main>
 
-
+  <script src="js/eventListener.js"></script>
 </body>
 
 </html>

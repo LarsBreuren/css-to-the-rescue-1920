@@ -6,18 +6,6 @@
   --third-bg-color: #fff;
 }
 
-main img {
-  width: 15%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
-
-main .black {
-  right: 0;
-  left: unset;
-}
-
 .animation {
   top: 20px;
   position: relative;
@@ -122,53 +110,35 @@ main .black {
   transform: rotate(200deg);
   background-color: var(--main-bg-color);
 }
-
 .animation:hover .eye {
   transform: scale(1.5);
 }
-
 .animation:hover .eye-inner-layer {
   width: 2em;
   height: 3em;
 }
-
 .animation:hover {
   filter: unset;
 }
-
-input:checked~.eye-inner-layer {
-  background-color: blue;
-}
-
 .animation:hover>.arrow {
   left: 70%;
 }
-
 .animation:hover>.arrow2 {
   right: 70%;
 }
-
 .animation:hover>.arrow3 {
   left: 40%;
 }
-
 .animation:hover>.arrow4 {
   right: 40%;
 }
-
-.animation:hover>.menu {
-  top: 300px;
-  opacity: 1;
-}
-
 .eye:hover>h1 {
   opacity: 1;
 }
 
-h1 {
-  opacity: 0;
-  color: #fff;
-  font-size: 3em;
+.menu.visable{
+  opacity: 1;
+  top: 0px;
 }
 
 .eye-inner-layer {
@@ -179,11 +149,41 @@ h1 {
   transition: 300ms;
 }
 
-.menu {
-  width: 20%;
+.checkboxLabel input:checked ~ .png{
+  filter: unset;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+.png {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: url("../img/eye.png");
+  filter: grayscale(100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  transition: 300ms;
+}
+
+input{ display: none;}
+
+.menu{ 
+  display: flex;
+  flex-wrap: nowrap;
+  width: 50%;
+  opacity: 0;
+  transition: 300ms;
+  margin: auto;
+  position: relative;
+  top: -150px;
+}
+.menu article {
+  width: 50%;
   text-align: center;
   margin: auto;
-  opacity: 0;
   transition: 300ms;
   position: relative;
   top: 0px;
@@ -191,6 +191,24 @@ h1 {
   padding: .5em 2em;
   font-family: 'Zhi Mang Xing', cursive;
   color: var(--main-bg-color);
+  z-index: 30;
+  margin: 0 2em;
+  box-sizing: border-box;
+}
+
+main:hover img{
+  animation: shake2 0.5s;
+  animation-iteration-count: infinite;
+}
+
+main{
+  height: 70vh;
+}
+
+.black:hover,
+.red:hover {
+  animation: shake2 0.5s;
+  animation-iteration-count: infinite;
 }
 
 .menu h2 {
@@ -211,34 +229,56 @@ body {
     linear-gradient(225deg, var(--second-bg-color) 15%, transparent 25%) -50px 0,
     linear-gradient(315deg, var(--second-bg-color) 15%, transparent 25%),
     linear-gradient(45deg, var(--second-bg-color) 15%, transparent 25%);
-
   background-size: 100px 100px;
   background-color: var(--main-bg-color);
 }
 
-/* shake code vanaf: https://www.w3schools.com/howto/howto_css_shake_image.asp */
+/* shake code van: https://www.w3schools.com/howto/howto_css_shake_image.asp */
 .animation:hover {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
 
-.animation:hover ~ .laser-beam { 
+main img {
+  width: 15%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+main .black {
+  right: 0;
+  left: unset;
+  z-index: 2;
+}
+
+.animation:hover ~ .laser-beam, .animation:hover ~ .laser-beam2 { 
   opacity: 1;
   width: 700px;
 }
 
-.laser-beam {
+.laser-beam, .laser-beam2 {
   width: 10px;
   height: 10px;
   background: rgba(255, 0, 0, 0,6);
   box-shadow: 0px 0px 15px 0px #000;
   opacity: 0;
-  z-index: 50;
+  z-index: -20;
   position: absolute;
   bottom: 170px;
   left: 139px;
-  transition: 300ms;
+  transition: 1s;
   border-radius: 20%;
+}
+.laser-beam2{ 
+  left: unset;
+  right: 170px;
+}
+
+.buttons{
+  z-index: 5;
+  position: fixed;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -246,6 +286,9 @@ body {
     animation: unset;
   }
   .animation:hover {
+    animation: unset;
+  }
+  main:hover img{
     animation: unset;
   }
 }
