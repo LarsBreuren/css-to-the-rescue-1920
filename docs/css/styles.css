@@ -3,7 +3,6 @@
 :root {
   --main-bg-color: red;
   --second-bg-color: #000;
-  --third-bg-color: #fff;
 }
 
 .animation {
@@ -110,33 +109,41 @@
   transform: rotate(200deg);
   background-color: var(--main-bg-color);
 }
+
 .animation:hover .eye {
   transform: scale(1.5);
 }
+
 .animation:hover .eye-inner-layer {
   width: 2em;
   height: 3em;
 }
+
 .animation:hover {
   filter: unset;
 }
+
 .animation:hover>.arrow {
   left: 70%;
 }
+
 .animation:hover>.arrow-2 {
   right: 70%;
 }
+
 .animation:hover>.arrow-3 {
   left: 40%;
 }
+
 .animation:hover>.arrow-4 {
   right: 40%;
 }
+
 .eye:hover>h1 {
   opacity: 1;
 }
 
-.menu.visable{
+.menu.visable {
   opacity: 1;
   top: 0px;
 }
@@ -149,7 +156,8 @@
   transition: 300ms;
 }
 
-.checkboxLabel input:checked ~ .png{
+.checkboxLabel input:focus ~ .png,
+.checkboxLabel input:checked~.png {
   filter: unset;
   background-size: cover;
   width: 30px;
@@ -168,9 +176,12 @@
   transition: 300ms;
 }
 
-input{ display: none;}
+input {
+  opacity: 0;
+  position: absolute;
+}
 
-.menu{ 
+.menu {
   display: flex;
   flex-wrap: nowrap;
   width: 50%;
@@ -180,6 +191,7 @@ input{ display: none;}
   position: relative;
   top: -150px;
 }
+
 .menu article {
   width: 50%;
   text-align: center;
@@ -196,12 +208,12 @@ input{ display: none;}
   box-sizing: border-box;
 }
 
-main:hover img{
+main:hover img {
   animation: shake2 0.5s;
   animation-iteration-count: infinite;
 }
 
-main{
+main {
   height: 70vh;
 }
 
@@ -239,164 +251,6 @@ body {
   animation-iteration-count: infinite;
 }
 
-main img {
-  width: 15%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-}
-
-main .black {
-  right: 0;
-  left: unset;
-  z-index: 2;
-}
-
-.animation:hover ~ .laser-beam, .animation:hover ~ .laser-beam2 { 
-  opacity: 1;
-  width: 700px;
-}
-
-.laser-beam, .laser-beam2 {
-  width: 10px;
-  height: 10px;
-  background: rgba(255, 0, 0, 0,6);
-  box-shadow: 0px 0px 15px 0px #000;
-  opacity: 0;
-  z-index: -20;
-  position: absolute;
-  bottom: 170px;
-  left: 139px;
-  transition: 1s;
-  border-radius: 20%;
-}
-.laser-beam2{ 
-  left: unset;
-  right: 170px;
-}
-
-.buttons{
-  z-index: 5;
-  position: fixed;
-}
-/* Cozy fire from https://codepen.io/2xsamurai/pen/EKpYMg */
-.animation:hover ~ .mo-fire.right,.mo-fire{ 
-  opacity: 1;
-}
-.animation:hover ~ .mo-fire{ 
-  opacity: 1;
-}
-
-.mo-fire.right,.mo-fire{ 
-  opacity: 0;
-}
-
-.mo-fire.right{ 
-  right: 5%;
-  left: unset; }
-.mo-fire {
-  width: 200px;
-  height: auto;
-  position: absolute;
-  left: 9%;
-  margin-left: -100px;
-  bottom: 110px;
-}
-.mo-fire svg {
-  width: 100%;
-  height: auto;
-  position: relative
-}
-.flame {
-  animation-name: flamefly;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  opacity: 0;
-  transform-origin: 50% 50% 0;
-}
-.flame.one {
-  animation-delay: 1s;
-  animation-duration: 3s;
-}
-.flame3.two{
-  animation-duration: 5s;
-  animation-delay: 1s;
-}
-
-.flame-main {
-  animation-name: flameWobble;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-.flame-main.one {
-  animation-duration: 4s;
-  animation-delay: 1s;
-}
-.flame-main.two {
-  animation-duration: 3s;
-  animation-delay: 2s;
-}
-.flame-main.three {
-  animation-duration: 2.1s;
-  animation-delay: 3s;
-}
-.flame-main.four {
-  animation-duration: 3.2s;
-  animation-delay: 4s;
-}
-.flame-main.five {
-  animation-duration: 2.5s;
-  animation-delay: 5s;
-}
-
-
-@keyframes flameWobble {
-  50% {
-    transform: scale(1,1.2) translate(0, -30px) rotate(-2deg);
-  }
-}
-@keyframes flamefly {
-  0%{
-    transform: translate(0) rotate(180deg);
-  }
-   50% {
-     opacity: 1;
-  }
-  100% {
-    transform: translate(-20px, -100px) rotate(180deg);
-    opacity: 0;
-  }
-
-@media (prefers-reduced-motion: reduce) {
-  .animation {
-    animation: unset;
-  }
-  .animation:hover {
-    animation: unset;
-  }
-  main:hover img{
-    animation: unset;
-  }
-}
-@media only screen and (max-width: 700px) {
-  [class|=arrow] {
-    display: none;
-  }
-  .menu {
-    width: 100%;
-}
-.menu article{ 
-  margin: 0 .5em;
-}
-[class|=laser] {
-  display: none;
-}
-}
-
-
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -424,3 +278,191 @@ main .black {
   90% { transform: translate(20px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+
+
+main img {
+  width: 15%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+main .black {
+  right: 0;
+  left: unset;
+  z-index: 2;
+}
+
+.animation:hover~.laser-beam,
+.animation:hover~.laser-beam2 {
+  opacity: 1;
+  width: 700px;
+}
+
+.laser-beam,
+.laser-beam2 {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 0, 0, 0, 6);
+  box-shadow: 0px 0px 15px 0px #000;
+  opacity: 0;
+  z-index: -20;
+  position: absolute;
+  bottom: 170px;
+  left: 139px;
+  transition: 1s;
+  border-radius: 20%;
+}
+
+.laser-beam2 {
+  left: unset;
+  right: 170px;
+}
+
+.buttons {
+  z-index: 5;
+  position: fixed;
+}
+
+/* Cozy fire from https://codepen.io/2xsamurai/pen/EKpYMg */
+.animation:hover~.mo-fire.right,
+.mo-fire {
+  opacity: 1;
+}
+
+.animation:hover~.mo-fire {
+  opacity: 1;
+}
+
+.mo-fire.right,
+.mo-fire {
+  opacity: 0;
+}
+
+.mo-fire.right {
+  right: 5%;
+  left: unset;
+}
+
+.mo-fire {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  left: 9%;
+  margin-left: -100px;
+  bottom: 110px;
+}
+
+.mo-fire svg {
+  width: 100%;
+  height: auto;
+  position: relative
+}
+
+.flame {
+  animation-name: flamefly;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  transform-origin: 50% 50% 0;
+}
+
+.flame.one {
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+
+.flame3.two {
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.flame-main {
+  animation-name: flameWobble;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.flame-main.one {
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.flame-main.two {
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+
+.flame-main.three {
+  animation-duration: 2.1s;
+  animation-delay: 3s;
+}
+
+.flame-main.four {
+  animation-duration: 3.2s;
+  animation-delay: 4s;
+}
+
+.flame-main.five {
+  animation-duration: 2.5s;
+  animation-delay: 5s;
+}
+
+
+@keyframes flameWobble {
+  50% {
+    transform: scale(1, 1.2) translate(0, -30px) rotate(-2deg);
+  }
+}
+
+@keyframes flamefly {
+  0% {
+    transform: translate(0) rotate(200deg);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-20px, -100px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+  @media (prefers-reduced-motion: reduce) {
+    .animation {
+      animation: unset;
+    }
+
+    .animation:hover {
+      animation: unset;
+    }
+
+    main:hover img {
+      animation: unset;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    [class|=arrow] {
+      display: none;
+    }
+
+    .menu {
+      width: 100%;
+    }
+
+    .menu article {
+      margin: 0 .5em;
+    }
+
+    [class|=laser] {
+      display: none;
+    }
+  }
+
