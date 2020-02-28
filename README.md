@@ -25,6 +25,9 @@ Because of the restriction i only was able to use 2 colours what was quite a cha
 * Cool animation on the body background when the eye is pressed 
 * Better design for the menu's
 
+## Instalation ##
+* Download or pull this repository
+* run the index.html file in the docs folder
 
 
 
