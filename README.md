@@ -1,64 +1,42 @@
-# CSS to the Rescue @cmda-minor-web 19-20
+# Web app from scratch with Darksky API #
+This app uses data from the Darksky API and calculates if the weather is any good to ride a motorcycle. 
+Of course there will be riders that never stop riding so it will also show the relevant information so they can decide for themselves.
 
-_This course is in English_
+![Banner2](https://user-images.githubusercontent.com/43336468/74424462-49c2a800-4e52-11ea-86ae-b05a1a435e95.png)
 
-In this three week course you are going to create an innovative, experimantal, yet pleasurable user experience by using CSS and SVG. No Javascrpt allowed.
-
-## Learning goals
-- _You understand the broader scope of CSS: You can show that CSS can be used for more than just styling web pages._
-- _You understand the progressive enhancement parts of CSS: You can show that you can use the cascade, inheritance and specificity in your project_
-- _You understand the interactive parts of CSS: Is the UX fully enhanced within in given CSS scope?_
-- _You have been experimenting: Have the learning goals been stretched?_
-
-[Rubric](https://docs.google.com/spreadsheets/d/1Xv48MSiACNmnM6nXpGGUb8mJDC459uSaxJszO_zLEp8/edit?usp=sharing)
-
-## Programm
-
-### Week 1 - 👁 C what you did there
-
-[See all the details of week 1 here](week1/).
-
-Goals of this week: 
-
-- Be inspired
-- Discuss hot CSS topics.
-- Get going!
-
-<!-- [Opdrachten](https://drive.google.com/open?id=1OVhWQNaCgSluYviTKKWcApkyPd23xow1PiExb8GYANM) -->
-
-<!-- [Slides](https://drive.google.com/open?id=1Rjl9xqXoKniQSRJPdkU1O5YwWC33SJK8KiV0a-H_xZU) -->
-
-### Week 2 - Create Stuff, 🙃 Smile 
-
-This week’s goals: Moar inspiration, create stuff, break stuff, and learn from each other.
-
-<!-- [Opdrachten](https://drive.google.com/open?id=1GMDTdW3LycAYpZSFI6gk_lrKrx8-zLWrNh69aaVEH5Y) -->
-
-<!-- [Slides](https://drive.google.com/open?id=1IqQeu1m0dQiSC_KCvrn8eencAgtYe7X6qT-gm0n9Bmc) -->
-
-### Week 3 - 🎪 Show time
-
-Goals: Blow us away.
-
-<!-- [Opdrachten](https://drive.google.com/open?id=13pKQu72pshaEzKw9q5JHLa-aop85nMP6nDCdqioWjoQ) -->
-
-<!-- [Slides](https://drive.google.com/open?id=1BSzGYNLMgtHD4HRnK7f0DgyTv4Pg3xsQwD_eYNo7v0Y) -->
+## Live demo ##
+https://larsbreuren.github.io/web-app-from-scratch-1920/ 
 
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+## API Request ##
+The app fetches the following dasta 
+  * Current forecast
+  * Current forecast on location
 
-<!-- ☝️ replace this description with a description of your own work -->
+## API restrictions ##
+The API requests are capped at 1000 per day, after that it will be 0.0001$ per request.
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+## Design patterns ##
+ * camelCasing
+ * use of ;
+ * single tab
+ * no vars 
 
-<!-- Maybe a table of contents here? 📚 -->
+## Micro libraries used ##
+* Routie for routes
+* transparency for rendering some HTML elements
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+## Nice to haves ##
+* Using current location for advice
+* Change background based on current weather
+* More scalable when using more locations
+* More advanched calculater to rate the weather
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+## Actor diagram ##
+![Actor diagram](https://user-images.githubusercontent.com/43336468/75484324-d6b84600-59a8-11ea-8c6b-479463b05a85.jpg)
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
+## Interaction diagram ##
+![Interaction Diagram](https://user-images.githubusercontent.com/43336468/75484332-de77ea80-59a8-11ea-9bd8-8c64d0550c97.jpg)
 
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+
